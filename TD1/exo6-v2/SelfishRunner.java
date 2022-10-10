@@ -9,11 +9,7 @@ public class SelfishRunner extends Thread {
             tick++;
             if ((tick % 50000) == 0){
                 System.out.println("Thread #" + num + ", tick = " + tick);
-                try {
-                    sleep(10);
-                } catch (InterruptedException e) {
-                    // TODO: handle exception
-                }
+                this.yield();
             }
         }
     }
