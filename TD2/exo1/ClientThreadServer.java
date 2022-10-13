@@ -4,16 +4,14 @@ import java.net.ServerSocket ;
 import java.net.Socket ;
 import java.io.*;
 
-class SocketThreadServer {
+class ClientThreadServer {
 
     public static void main(String[] args) throws IOException{
-        ServerSocket servSocket = new ServerSocket(1234);
-        Socket link = servSocket.accept();
+        Socket link = new Socket("127.0.0.1", 1234);
         BufferedReader in = new BufferedReader(new InputStreamReader(link.getInputStream()));
         PrintWriter out = new PrintWriter(link.getOutputStream(),true);
-        System.out.println("awaiting data...");
-        String input = in.readLine();
-        System.out.println(input);
+        System.out.println("sending data...");
+        out.println("ghsdjkl");
         link.close();
     }
 
