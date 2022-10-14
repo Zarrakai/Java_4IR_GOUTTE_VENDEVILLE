@@ -8,7 +8,15 @@ class ForkServer extends Thread{
     ForkServer(Socket link) {
         super();
         this.link = link;
-        start();
+    }
+
+    ForkServer() {
+        super();
+    }
+
+    void setLink(Socket link)
+    {
+        this.link = link;
     }
 
     @Override
