@@ -2,7 +2,7 @@ import java.net.* ;
 import java.io.* ;
 
 
-class ForkServer extends Thread{
+class ForkServer implements Runnable{
     private Socket link;
 
     ForkServer(Socket link) {
@@ -25,6 +25,8 @@ class ForkServer extends Thread{
             BufferedReader in = new BufferedReader(new InputStreamReader(this.link.getInputStream()));
             System.out.println("awaiting message...");
             String input = in.readLine();
+            System.out.println("message received : " + input);
+            input = in.readLine();
             System.out.println("message received : " + input);
         } catch (IOException e) {
             System.out.println("Erreur IOException");

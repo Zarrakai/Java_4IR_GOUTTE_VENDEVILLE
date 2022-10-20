@@ -90,7 +90,7 @@ public class CelsiusConverter2 implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         String eventName = event.getActionCommand();
         //Parse degrees Celsius as a double and convert to Fahrenheit.
-        int tempFahr = (int)((Double.parseDouble(tempCelsius.getText()))
+        int tempFahr = (int)((Double.parseDouble(tempCelsius.getText().replace(',', '.')))
                              * 1.8 + 32);
 
         //Set fahrenheitLabel to the new value and set font color
